@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+
+:root {
+    --blue-color: blue;
+    --darkblue-color: rgb(51, 72, 95);
+}
+/*
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+*/
+body { 
+    background: rgb(184, 205, 254);
+}
+/*
+body,h1,h2,p {
+    margin: 0; padding: 0;
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 1.3rem;
+    line-height: 1.3;
+    font-weight: 400;
+   
+}
+
+*::selection {
+    background-color: var(--blue-color);
+    color: rgb(245, 245, 245);
+}
+
+* {
+    text-decoration: none;
+    color: blue;
+    list-style: none;
+    /* outline: none; */
+
+header {
+    /* change the padding or add container while the width goes large */
+    padding: 1em 0;
+    background: rgb(251, 254, 255);
+    width: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* justify-content: space-evenly; */
+
+    box-shadow: 0 1px 9px #888888;
+    -webkit-box-shadow: 0 1px 9px #888888;
+    -moz-box-shadow: 0 1px 9px #888888;
+}
+
+header input {
+    display: none;
+    /* visibility: hidden; */
+}
+
+header h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 1px #636363;
+}
+
+header .logo-clr {
+    color: var(--darkblue-color);
+}
+
+
+/* hamburger menu */
+
+.hamburger-menu {
+    display: block;
+    position: relative;
+    cursor: pointer;
+}
+
+.hamburger-menu, 
+.hamburger-menu::after,
+.hamburger-menu::before {
+    background: gray;
+    height: 3px;
+    width: 1.8rem; 
+    border-radius: 2px;
+
+    /* This is for hamburger icon &#9776 */
+    /* font-size: 1.6rem; */
+}
+
+.hamburger-menu::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+}
+
+.hamburger-menu::before {
+    content: "";
+    position: absolute;
+    bottom: 8px;
+}
+
+/* For navbar */
+
+.navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    background: rgb(242, 240, 240);
+    border-top: 2px solid rgb(128, 128, 128);
+
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+    transition: opacity 350ms ease-in-out,
+                transform 450ms ease-in-out;
+}
+
+/* toggle navbar */
+
+#toggle-check:checked ~ .navbar {
+    transform: scaleY(1);
+    opacity: 1;
+    transition: transform 350ms ease-in-out,
+                opacity 250ms ease-in-out;
+}
+
+.navbar ul, .navbar li {
+    margin: 10px;
+    padding: 10px;
+}
+
+.navbar ul {
+    margin-bottom: .5em;
+    margin-top: .5em;
+}
+
+.navbar li {
+    margin: 0 1em; 
+    text-align: left;
+}
+
+.navbar a {
+    position: fixed;
+    display: inline-block;
+    padding: .5em 0 .2em 0;
+    transition: 100ms ease-in-out ;
+}
+
+.navbar a:hover {
+    border-bottom: 2px solid var(--darkblue-color);
+    color: var(--darkblue-color)
+}
+
+a {
+    color: gray; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+  }
+
+/* media queries */
+@media screen and (min-width:800px) {
+
+    label {
+        display: none;
+    }
+
+    .navbar {
+        all: unset;
+    }
+
+    .navbar li {
+        display: inline; 
+    }
+
+    .navbar li {
+        margin-left: 1em;
+    }
+
+    .navbar a {
+        position: relative;
+    }
+
+    .navbar a::after{
+        content: "";
+        position: absolute;
+        top: 2.3em;
+        left: 0;
+        height: 3px;
+        width: 100%;
+        background: var(--darkblue-color);
+        
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 350ms ease-in-out;
+        -webkit-transition: transform 350ms ease-in-out;
+        
+    } 
+
+    .navbar a:hover::after{
+        transform: scaleX(1);
+    }
+
+    .navbar a:hover {
+        border-style: none;
+    }
+}
+
+/* sample button */
+
+.box {
+    margin-top: 10em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:20vh;
+    flex-direction: column;
+}
+
+.btn-shadow {
+    position: relative;
+    background: rgb(216, 215, 215);
+    color: var(--blue-color);
+    border: none;
+    padding: 10px 13px;
+    box-shadow: -3px 3px 0 gray;
+    font-weight: 600;
+}
+    .btn-shadow:hover {
+        background-color:rgb(202, 201, 201);
+    }   
+
+    .btn-shadow a:hover {
+        color: rgb(173, 0, 173) ;
+    }
+
+    .btn-shadow:active {
+        background-color:rgb(202, 201, 201); 
+        top: 2px;
+        left: -2px;
+
+        box-shadow: -1.5px 1.5px 0 gray;
+    }  
+
+
+.btn-shadow::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -3px;
+
+    display: block;
+    height: 0;
+    width: 0;
+
+    border: 3px solid transparent;
+    border-right: 3px solid gray;
+    border-left-width: 0;
+}
+    .btn-shadow:active::before {
+        border-right: 1.5px solid gray;
+        border-left-width: 0;
+        left: -1.5px;
+        z-index: -1;
+    }
+
+.btn-shadow::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    right: -2.8px;
+    z-index: -1;
+
+    display: block;
+    height: 0;
+    width: 0;
+
+    border: 3px solid transparent;
+    border-left: 3px solid gray;
+}
+    .btn-shadow:active:after {
+        bottom: -2px;
+    }
+
+/* For styling a letter */
+
+.text-letter {
+   margin-top: 2em;
+}
+
+.text-letter h1 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    transform: skew(-5deg, -5deg) rotate(5deg);
+    transform-origin: center center;
+    text-shadow: 1px 1px 0 rgb(78, 0, 78),
+                 2px 2px 0 rgb(78, 0, 78),
+                 3px 3px 0 rgb(78, 0, 78),
+                 4px 4px 0 rgb(78, 0, 78),
+                 5px 5px 0 rgb(78, 0, 78),
+                 6px 6px 0 rgb(78, 0, 78),
+                 7px 7px 0 rgb(78, 0, 78),
+                 8px 8px 0 rgb(53, 0, 53),
+                 8px 8px 0 rgb(53, 0, 53)
+                 ;
+}
