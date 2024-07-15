@@ -21,6 +21,7 @@ const CLASS = {
     }
 }
 
+const base_asset_URL = '';
 
 
-export { CLASS, }
+export { CLASS, base_asset_URL };

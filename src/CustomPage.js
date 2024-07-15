@@ -72,8 +72,6 @@ const CustomPage = ({ pageType }) => {
   const navigate = useNavigate(); // Initialize useNavigate hook
   let { pageName } = useParams();
 
-  console.log(pageName)
-
   let headerColor = '';
   let pageTitle = '';
   let pageClassName = '';
@@ -103,7 +101,6 @@ const CustomPage = ({ pageType }) => {
   useEffect(() => {
     async function fetchData() {
       try {
-        console.log(pageName);
         const pageDate = extract_date(pageName);
         if (!pageDate || !pageDate['year'] || !pageDate['month_short_str'] || !pageDate['day']) {
           throw new Error('Invalid date in pageName');

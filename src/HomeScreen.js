@@ -88,7 +88,6 @@ const BottomSection = styled.section`
   background-color: steelblue;
   padding-left: 5%;
   padding-right: 5%;
-  padding-top: 40px;
   padding-bottom: 40px;
   max-width: 80%;
   margin: 50px auto;
@@ -125,7 +124,7 @@ const centerButton = {
   'justifyContent': 'center', 
   'alignItems': 'center', 
   'width': '100%', 
-  'padding-top': '20px',
+  'paddingTop': '20px',
 }
 
 
@@ -188,7 +187,6 @@ function HomeScreen() {
         {sectionsData.slice(0, 3).map((section, index) => (
           <Section key={index}>
             <SectionContent>
-              {console.log(cardDatas)}
               <Card details={cardDatas[index]['details']} redirectToPage={cardDatas[index]['redirection']} />
               <div>
                 <ColoredTitle color={CLASS[section.type]['colour']}>

@@ -47,13 +47,12 @@ const Card = ({ details, onCardClick, redirectToURL, redirectToPage }) => {
   // Define imageSrc state with useState hook
   const [imageSrc, setImageSrc] = useState('');
 
-
+  // load image
   useEffect(() => {
-    const imagePath = type === -1 ? `../assets/${file_name}.png` : `../thumbnails/${type}/${file_name}.png`;
-    import(imagePath)
-      .then(image => setImageSrc(image.default))
-      .catch(() => console.log('womp womp check Card.js for errors'));
+    const imagePath = type === -1 ? `/src/assets/${file_name}.png` : `/src/thumbnails/${type}/${file_name}.png`;
+    setImageSrc(imagePath);
   }, [type, file_name]);
+
 
   const handleClick = () => {
     if (redirectToURL) {
