@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/pranavjoshi-stem.github.io.git/static/js/main.3931ed53.js",
-    "static/js/695.03625b20.chunk.js": "/pranavjoshi-stem.github.io.git/static/js/695.03625b20.chunk.js",
-    "static/js/253.43a1ba0e.chunk.js": "/pranavjoshi-stem.github.io.git/static/js/253.43a1ba0e.chunk.js",
-    "static/js/750.d8144582.chunk.js": "/pranavjoshi-stem.github.io.git/static/js/750.d8144582.chunk.js",
-    "static/js/265.27905e7a.chunk.js": "/pranavjoshi-stem.github.io.git/static/js/265.27905e7a.chunk.js",
+    "main.js": "/pranavjoshi-stem.github.io.git/static/js/main.8d83eab5.js",
+    "static/js/695.28d6ffe3.chunk.js": "/pranavjoshi-stem.github.io.git/static/js/695.28d6ffe3.chunk.js",
+    "static/js/253.68041d9d.chunk.js": "/pranavjoshi-stem.github.io.git/static/js/253.68041d9d.chunk.js",
+    "static/js/750.b4e6f844.chunk.js": "/pranavjoshi-stem.github.io.git/static/js/750.b4e6f844.chunk.js",
+    "static/js/265.997c560b.chunk.js": "/pranavjoshi-stem.github.io.git/static/js/265.997c560b.chunk.js",
     "index.html": "/pranavjoshi-stem.github.io.git/index.html",
-    "main.3931ed53.js.map": "/pranavjoshi-stem.github.io.git/static/js/main.3931ed53.js.map",
-    "695.03625b20.chunk.js.map": "/pranavjoshi-stem.github.io.git/static/js/695.03625b20.chunk.js.map",
-    "253.43a1ba0e.chunk.js.map": "/pranavjoshi-stem.github.io.git/static/js/253.43a1ba0e.chunk.js.map",
-    "750.d8144582.chunk.js.map": "/pranavjoshi-stem.github.io.git/static/js/750.d8144582.chunk.js.map",
-    "265.27905e7a.chunk.js.map": "/pranavjoshi-stem.github.io.git/static/js/265.27905e7a.chunk.js.map"
+    "main.8d83eab5.js.map": "/pranavjoshi-stem.github.io.git/static/js/main.8d83eab5.js.map",
+    "695.28d6ffe3.chunk.js.map": "/pranavjoshi-stem.github.io.git/static/js/695.28d6ffe3.chunk.js.map",
+    "253.68041d9d.chunk.js.map": "/pranavjoshi-stem.github.io.git/static/js/253.68041d9d.chunk.js.map",
+    "750.b4e6f844.chunk.js.map": "/pranavjoshi-stem.github.io.git/static/js/750.b4e6f844.chunk.js.map",
+    "265.997c560b.chunk.js.map": "/pranavjoshi-stem.github.io.git/static/js/265.997c560b.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.3931ed53.js"
+    "static/js/main.8d83eab5.js"
   ]
 }
