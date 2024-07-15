@@ -1,5 +1,5 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect} from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { CLASS } from './configs/config.js';
@@ -67,6 +67,9 @@ const StyledP = styled.p`
 
 // Page
 const CustomPage = ({ pageType }) => {
+  const [data, setData] = useState(null);
+
+  const navigate = useNavigate(); // Initialize useNavigate hook
   let { pageName } = useParams();
 
   console.log(pageName)
@@ -77,7 +80,7 @@ const CustomPage = ({ pageType }) => {
 
   // Determine header color and title based on pageType
   switch (pageType) {
-    case 0: // Cyan - Events
+    case 0: // Cyan - Stories
       headerColor = CLASS[0]['colour'];
       pageTitle = CLASS[0]['text'];
       pageClassName = 'wsite-background-5';
@@ -97,16 +100,39 @@ const CustomPage = ({ pageType }) => {
   }
 
   // Assign data
-  console.log(pageName)
-  const pageDate = extract_date(pageName);
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        console.log(pageName);
+        const pageDate = extract_date(pageName);
+        if (!pageDate || !pageDate['year'] || !pageDate['month_short_str'] || !pageDate['day']) {
+          throw new Error('Invalid date in pageName');
+        }
+        const module = await import(`./${CLASS[pageType]['type']}/${pageName}.js`);
+        const details = module.default;
+  
+        setData({
+          date: `(${pageDate['month_short_str']} ${pageDate['day']}, ${pageDate['year']})`,
+          image: `./thumbnails/${CLASS[pageType]['type']}/${pageName}.png`,
+          title: details['title'],
+          desc: details['description'],
+        });
+      } catch (error) {
+        console.error(error);
+        navigate('/'); // Redirect to root route on error
+      }
+    }
+  
+    fetchData();
+  } , [pageName, pageType, navigate]);
 
-  let data = {
-    date: `(${pageDate['month_short_str']} ${pageDate['day']}, ${pageDate['year']})`,
-    image: 'https://www.w3schools.com/w3images/paris.jpg',
-    title: 'Paris',
-    desc: 'Paris is the capital of France.Paris is the capital of France.Paris is the capital of France.Paris is the capital of France.Paris is the capital of France.Paris is the capital of France.Paris is the capital of France.Paris is the capital of France.Paris is the capital of France.Paris is the capital of France.Paris is the capital of France.Paris is the capital of France.Paris is the capital of France.Paris is the capital of France.Paris is the capital of France.Paris is the capital of France.Paris is the capital of France.Paris is the capital of France.Paris is the capital of France.Paris is the capital of France.Paris is the capital of France.Paris is the capital of France.Paris is the capital of France.Paris is the capital of France.Paris is the capital of France.Paris is the capital of France.Paris is the capital of France.Paris is the capital of France.Paris is the capital of France.Paris is the capital of France.Paris is the capital of France.Paris is the capital of France.'
-  };
+  // Before returning your JSX, check if `data` is null and return a loading state or similar
+  if (!data) {
+    return <div>Loading...</div>; // Or any other placeholder content
+  }
 
+
+  // If data is not null, return the JSX
   return (
     <div className={pageClassName}>
       <StyledHeader style={{ backgroundColor: headerColor }}>

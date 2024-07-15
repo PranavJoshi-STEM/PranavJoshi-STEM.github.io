@@ -8,7 +8,7 @@ const details_01_09_2022 = {
     'card_title': 'Local municipal elections are starting...',
     'card_subtext': `so that's why I created a website for a candidate!`,
     'file_name': '01_09_2022',
-    'descripion': `· · · (01/09/2022) In my city, we have municipal elections coming up.  
+    'description': `· · · (01/09/2022) In my city, we have municipal elections coming up.  
 This election determines who becomes city-councilor of my ward.  Naturally, I found 
 the opportunity to get volunteer hours; however, instead of publicising a candidate,
 I found it to be much more interesting if I would've created a website for one.  On my city's official website,

@@ -52,7 +52,7 @@ const Card = ({ details, onCardClick, redirectToURL, redirectToPage }) => {
     const imagePath = type === -1 ? `../assets/${file_name}.png` : `../thumbnails/${type}/${file_name}.png`;
     import(imagePath)
       .then(image => setImageSrc(image.default))
-      .catch(() => setImageSrc('path/to/default/image.png'));
+      .catch(() => console.log('womp womp check Card.js for errors'));
   }, [type, file_name]);
 
   const handleClick = () => {

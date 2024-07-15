@@ -9,7 +9,7 @@ const details_28_07_2022 = {
     'card_title': 'My Website Just Went Online!',
     'card_subtext': `Using vanilla javascript to go online.`,
     'file_name': '28_07_2022',
-    'descripion': `· · · (28/07/2022) While having fun during the summer-break, I worked on this project to act as my professional
+    'description': `· · · (28/07/2022) While having fun during the summer-break, I worked on this project to act as my professional
 	website. Originally, I wanted to create it on Weebly due to my familiarity and using the service. 
 	However, I soon realised how rigid and buggy it was; I wanted to code simple CSS cards with box-shadows 
 	and that took several hours! Thinking through it, I decided to download the website and work on

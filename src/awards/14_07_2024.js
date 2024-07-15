@@ -10,7 +10,7 @@ const details_14_07_2024 = {
     'card_title': 'I am testing the awards with this file',
     'card_subtext': `wooooooooooooooooooooooooooooooooooooo`,
     'file_name': '14_07_2024',
-    'descripion': `· · ·(24/07/2022) Over the weekend, my family and I visited my sister who 
+    'description': `· · · (24/07/2022) Over the weekend, my family and I visited my sister who 
 	studies at the City of Waterloo. While chatting at her apartment, a brief idea sparked 
 	up. I would get a tour outside of University Waterloo (my dream school) to see what 
 	it's like. When I walked through the campus, I couldn't believe my eyes; all the 
