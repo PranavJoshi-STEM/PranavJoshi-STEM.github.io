@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Card from './components/Card.js';
@@ -69,11 +70,17 @@ const Text = styled.p`
   text-align: justify;
   max-width: 600px;
   overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.6rem;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 10; /* Limit text */
+  -webkit-box-orient: vertical;
   @media (max-width: 768px) {
-    max-width: 100%;
-    white-space: normal;
+    max-width: 90%;
+    margin: 0 auto;
+    white-space: normal; /* Allows text wrapping on smaller screens */
   }
 `;
 
@@ -112,7 +119,14 @@ const JustifiedText = ({ htmlContent }) => (
   <StyledParagraph dangerouslySetInnerHTML={{ __html: htmlContent }} />
 );
 
-
+// Centering the button
+const centerButton = {
+  'display': 'flex', 
+  'justifyContent': 'center', 
+  'alignItems': 'center', 
+  'width': '100%', 
+  'padding-top': '20px',
+}
 
 
 /* Data for sections */
@@ -128,6 +142,7 @@ const sectionsData = Object.values(CLASS).map((section, index) => ({
 /* SCREEN */
 function HomeScreen() {
   const [cardDatas, setCardDatas] = useState({});
+  const navigate = useNavigate();
 
   // Get data for cards
   useEffect(() => {
@@ -180,7 +195,10 @@ function HomeScreen() {
                   Recent {section.title.charAt(0).toUpperCase() + section.title.slice(1)}
                 </ColoredTitle>
                 <Text>{cardDatas[index]['details']['description']}</Text>
-                <Button type={section.type} onClick={() => console.log(`Button clicked ${section.type}`)} />
+                {/* Center the button */}
+                <div style={centerButton}>
+                  <Button type={section.type} onClick={() => navigate(`/${section.title}`)} />
+                </div>
               </div>
             </SectionContent>
             {/* Dont generate the line on the last iteration */}

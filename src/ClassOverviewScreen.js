@@ -1,8 +1,33 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+
 import Card from './components/Card.js';
 import { CLASS } from './configs/config.js';
 
 import { find_all_dates } from './libraries/date.js';
+
+
+// CSS
+const Section = styled.section`
+    background-color: #fff;
+    padding: 20px;
+`;
+
+const Title = styled.h2`
+    color: white;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 100%;
+    font-size: 3rem;
+    border-radius: 15px 15px 15px 15px; /* Bottom corners rounded */
+
+`;
+
+const CardContainer = styled.section`
+`
+
+
 
 // Page
 function ClassOverviewScreen({ type }) {
@@ -18,17 +43,14 @@ function ClassOverviewScreen({ type }) {
   }, [type]);
 
   return (
-    <div className="ClassOverviewScreen">
-      <div className="header-banner" style={{ backgroundColor: CLASS[type]['colour'] }}>
-        <h1>{CLASS[type]['text']}</h1>
-      </div>
-
-      <div className="card-container">
+    <Section>
+      <Title style={{ 'background-color': CLASS[type]['colour'] }}> All {CLASS[type].type}:</Title>
+      <CardContainer>
         {cards.map((card, index) => (
-          <Card key={index} title={card.title} description={card.description} image={card.image} />
+          <Card key={index} data={card} />
         ))}
-      </div>
-    </div>
+      </CardContainer>
+    </Section>
   );
 }
 

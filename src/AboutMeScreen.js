@@ -6,13 +6,11 @@ import Card from './components/Card.js';
 
 // CSS
 const Section = styled.section`
-    /* Section styles */
     background-color: #fff;
     padding: 20px;
 `;
 
 const Title = styled.h2`
-    /* Title styles */
     background-color: #70abd4;
     color: white;
     text-align: center;
@@ -25,22 +23,21 @@ const Title = styled.h2`
 `;
 
 const Paragraph = styled.p`
-    /* Paragraph styles */
     line-height: 1.6;
     font-family: 'Open Sans', sans-serif;
     font-size: 0.9rem;
     text-align: justify;
+    max-width: 80%;
+    margin: 0 auto 20px auto; /* Centered with margin at the bottom */
 `;
 
 const Divider = styled.hr`
-    /* Divider styles */
     border: 0;
     border-top: 1px solid #ccc;
     margin: 20px 0;
 `;
 
 const Subtitle = styled.h3`
-    /* Subtitle styles */
     font-size: 1.8rem;
     margin-bottom: 10px;
     font-family: 'Open Sans', sans-serif;

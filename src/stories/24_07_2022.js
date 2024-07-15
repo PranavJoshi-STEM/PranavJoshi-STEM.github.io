@@ -9,7 +9,7 @@ const details_24_07_2022 = {
     'card_title': 'I visited the University of Waterloo!',
     'card_subtext': `I couldn't believe my eyes...`,
     'file_name': '24_07_2022',
-    'description': `· · ·(24/07/2022) Over the weekend, my family and I visited my sister who 
+    'description': `· · · (24/07/2022) Over the weekend, my family and I visited my sister who 
 	studies at the City of Waterloo. While chatting at her apartment, a brief idea sparked 
 	up. I would get a tour outside of University Waterloo (my dream school) to see what 
 	it's like. When I walked through the campus, I couldn't believe my eyes; all the 
