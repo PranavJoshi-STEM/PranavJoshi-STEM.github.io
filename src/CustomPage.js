@@ -2,7 +2,7 @@ import React, { useState, useEffect} from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { CLASS } from './configs/config.js';
+import { CLASS, base_asset_URL } from './configs/config.js';
 
 import { extract_date } from './libraries/date.js';
 
@@ -68,6 +68,7 @@ const StyledP = styled.p`
 // Page
 const CustomPage = ({ pageType }) => {
   const [data, setData] = useState(null);
+  const [imageSrc, setImageSrc] = useState('');
 
   const navigate = useNavigate(); // Initialize useNavigate hook
   let { pageName } = useParams();
@@ -110,10 +111,12 @@ const CustomPage = ({ pageType }) => {
   
         setData({
           date: `(${pageDate['month_short_str']} ${pageDate['day']}, ${pageDate['year']})`,
-          image: `./thumbnails/${CLASS[pageType]['type']}/${pageName}.png`,
           title: details['title'],
           desc: details['description'],
         });
+
+        setImageSrc(`${base_asset_URL}/src/thumbnails/${CLASS[pageType]['type']}/${pageName}.png`)
+        console.log(imageSrc)
       } catch (error) {
         console.error(error);
         navigate('/'); // Redirect to root route on error
@@ -121,7 +124,7 @@ const CustomPage = ({ pageType }) => {
     }
   
     fetchData();
-  } , [pageName, pageType, navigate]);
+  } , [pageName, pageType, navigate, imageSrc, setImageSrc]);
 
   // Before returning your JSX, check if `data` is null and return a loading state or similar
   if (!data) {
@@ -138,7 +141,7 @@ const CustomPage = ({ pageType }) => {
       </StyledHeader>
 
       <ImageContainer>
-        <StyledImage src={data.image} alt={'Image'} />
+        <StyledImage src={imageSrc} alt={imageSrc} />
       </ImageContainer>
 
       <StyledH2 style={{ color: headerColor }}>{data.title}</StyledH2>

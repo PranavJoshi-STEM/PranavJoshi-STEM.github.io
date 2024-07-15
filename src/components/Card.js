@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
+import { base_asset_URL } from '../configs/config';
+
 // CSS
 const CardContainer = styled.div`
   box-shadow: 1px 4px 8px 1px rgba(0,0,0,0.2);
   transition: transform 0.2s, box-shadow 0.2s;
-  width: 400px;
+  width: 350px;
   max-width: 90%;
   border-radius: 5px;
   overflow: hidden;
@@ -20,7 +22,10 @@ const CardContainer = styled.div`
 
 const CardImage = styled.img`
   width: 100%;
+  height: 350px;
   border-radius: 5px 5px 0 0;
+  object-fit: cover;
+  object-position: center;
 `;
 
 const CardContent = styled.div`
@@ -49,7 +54,7 @@ const Card = ({ details, onCardClick, redirectToURL, redirectToPage }) => {
 
   // load image
   useEffect(() => {
-    const imagePath = type === -1 ? `/src/assets/${file_name}.png` : `/src/thumbnails/${type}/${file_name}.png`;
+    const imagePath = type === -1 ? `${base_asset_URL}/src/assets/${file_name}.png` : `${base_asset_URL}/src/thumbnails/${type}/${file_name}.png`;
     setImageSrc(imagePath);
   }, [type, file_name]);
 
