@@ -9,7 +9,7 @@ const CLASS = {
     // awards
     1: {
         'colour': '#e55441',
-        'text': 'My Past Accomplishments',
+        'text': 'My Past Feats',
         'type': 'awards',
     },
 
