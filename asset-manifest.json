@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/static/js/main.e6ef0288.js",
+    "main.js": "/static/js/main.8b1bbc7f.js",
     "static/js/695.e91aafea.chunk.js": "/static/js/695.e91aafea.chunk.js",
     "static/js/253.68041d9d.chunk.js": "/static/js/253.68041d9d.chunk.js",
     "static/js/750.b4e6f844.chunk.js": "/static/js/750.b4e6f844.chunk.js",
@@ -34,13 +34,13 @@
     "static/media/Gmail Logo.png": "/static/media/Gmail Logo.f11b86d1951cfb21833a.png",
     "index.html": "/index.html",
     "static/media/0_find.md": "/static/media/0_find.f917ad326e3484d643aa.md",
-    "main.e6ef0288.js.map": "/static/js/main.e6ef0288.js.map",
+    "main.8b1bbc7f.js.map": "/static/js/main.8b1bbc7f.js.map",
     "695.e91aafea.chunk.js.map": "/static/js/695.e91aafea.chunk.js.map",
     "253.68041d9d.chunk.js.map": "/static/js/253.68041d9d.chunk.js.map",
     "750.b4e6f844.chunk.js.map": "/static/js/750.b4e6f844.chunk.js.map",
     "265.b8ae83cc.chunk.js.map": "/static/js/265.b8ae83cc.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.e6ef0288.js"
+    "static/js/main.8b1bbc7f.js"
   ]
 }
