@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknew_personal_website=self.webpackChunknew_personal_website||[]).push([[889],{889:(e,s,p)=>{e.exports=p.p+"static/media/Whatsapp Logo.bb86f3d0ce74c69851f0.png"}}]);

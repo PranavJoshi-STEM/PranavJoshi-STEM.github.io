@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknew_personal_website=self.webpackChunknew_personal_website||[]).push([[879],{879:(e,s,a)=>{e.exports=a.p+"static/media/Gmail Logo.f11b86d1951cfb21833a.png"}}]);

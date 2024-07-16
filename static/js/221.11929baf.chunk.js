@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknew_personal_website=self.webpackChunknew_personal_website||[]).push([[221],{221:(e,s,p)=>{e.exports=p.p+"static/media/TikTok Logo.8c140bf2293ce99c4b12.png"}}]);

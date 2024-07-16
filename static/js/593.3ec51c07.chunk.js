@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknew_personal_website=self.webpackChunknew_personal_website||[]).push([[593],{593:(e,s,p)=>{e.exports=p.p+"static/media/Discord Logo.247d0c06b3ea56023d8d.png"}}]);

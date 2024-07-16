@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunknew_personal_website=self.webpackChunknew_personal_website||[]).push([[695],{695:(e,t,r)=>{r.r(t),r.d(t,{default:()=>s});const s={type:"awards",title:"BLANK CARD",card_title:"This is a blank card.",card_subtext:"Placeholder for future content.",file_name:"14_07_2024",description:"\xb7 \xb7 \xb7 (14/07/2024) Don't worry, this card is not broken. It's just a placeholder for future content."}}}]);
+//# sourceMappingURL=695.e91aafea.chunk.js.map

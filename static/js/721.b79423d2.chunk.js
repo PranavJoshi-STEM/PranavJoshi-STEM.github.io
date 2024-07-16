@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknew_personal_website=self.webpackChunknew_personal_website||[]).push([[721],{721:(e,s,n)=>{e.exports=n.p+"static/media/LinkedIn Logo.ddf9b6830fca4348dbb3.png"}}]);

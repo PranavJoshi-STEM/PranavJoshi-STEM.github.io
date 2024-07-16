@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknew_personal_website=self.webpackChunknew_personal_website||[]).push([[405],{405:(e,s,a)=>{e.exports=a.p+"static/media/Instagram Logo.c2b5ab0c04f309922020.png"}}]);

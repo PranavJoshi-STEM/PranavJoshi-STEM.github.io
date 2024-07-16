@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknew_personal_website=self.webpackChunknew_personal_website||[]).push([[865],{865:(e,s,a)=>{e.exports=a.p+"static/media/01_09_2022.ca10e67ddffed249e2a3.png"}}]);
