@@ -22,7 +22,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build":"react-scripts build",
-    "postbuildkjasdjka": "shx cp build/index.html build/404.html",
+    "postbuild": "shx cp build/index.html build/404.html",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
