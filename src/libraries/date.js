@@ -1,4 +1,6 @@
-import fs from 'fs-web';
+import { github_API_URL } from '../configs/config.js';
+import axios from 'axios';
+
 
 // Function to extract details of the input string in the format 'DD_MM_YYYY'
 const extract_date = (text) => {
@@ -29,31 +31,63 @@ const extract_date = (text) => {
 }
 
 
-// Find all the dates in a class
 const find_all_dates = async (type) => {
-    let dir;
-    switch (type) {
-        case 0:
-            dir = './stories/';
-            break;
-        case 1:
-            dir = './awards/';
-            break;
-        case 2:
-            dir = './projects/';
-            break;
-        default:
-            return [];
-    }
-    console.log('reading directory:', dir);
+    let dir = ['stories', 'awards', 'projects'][type];
+    console.log('Reading directory:', dir);
 
     try {
-        // Using fs-web to read the directory
-        const files = await fs.readdir(dir);
-        console.log(files);
-        return files; // Returns an array of file names in the specified directory
+        // Make a GET request to GitHub API
+        // Note: Don't put slash because that somehow messes up the URL
+        const response = await axios.get(`${github_API_URL}${dir}/`);
+
+        // Extract file names from the response
+        const fileNames = response.data.map(file => file.name);
+
+        // Filter files based on the format 'DD_MM_YYYY.js'
+        const filteredFiles = fileNames.filter(fileName => {
+            if (fileName === '0_find.md') {
+                return false; // Exclude '0_find.md'
+            }
+            const regex = /^\d{2}_\d{2}_\d{4}\.js$/; // Matches 'DD_MM_YYYY.js' format
+            return regex.test(fileName);
+        });
+
+        // Prepare a dictionary to store posts by year in reverse chronological order
+        const postsByYear = {};
+
+        // Populate postsByYear dictionary
+        filteredFiles.forEach(fileName => {
+            const date = extract_date(fileName.replace('.js', ''));
+            const year = date.year;
+
+            if (!postsByYear[year]) {
+                postsByYear[year] = [];
+            }
+            postsByYear[year].push(fileName);
+        });
+
+        // Sort posts within each year in reverse chronological order
+        Object.keys(postsByYear).forEach(year => {
+            postsByYear[year].sort((a, b) => {
+                const dateA = extract_date(a.replace('.js', ''));
+                const dateB = extract_date(b.replace('.js', ''));
+                const numDateA = parseInt(`${dateA.year}${dateA.month}${dateA.day}`, 10);
+                const numDateB = parseInt(`${dateB.year}${dateB.month}${dateB.day}`, 10);
+                return numDateB - numDateA;
+            });
+        });
+
+        // Prepare the final response array in reverse chronological order by year
+        const finalResponse = Object.keys(postsByYear)
+            .sort((a, b) => b - a) // Sort years in reverse chronological order
+            .map(year => ({
+                year: year,
+                posts: postsByYear[year]
+            }));
+
+        return finalResponse;
     } catch (error) {
-        console.error('Error reading directory:', error);
+        console.error('Error fetching file names:', error);
         return [];
     }
 };

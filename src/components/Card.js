@@ -8,6 +8,7 @@ const CardContainer = styled.div`
   box-shadow: 1px 4px 8px 1px rgba(0,0,0,0.2);
   transition: transform 0.2s, box-shadow 0.2s;
   width: 350px;
+  height: 500px;
   max-width: 90%;
   border-radius: 5px;
   overflow: hidden;

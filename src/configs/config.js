@@ -22,6 +22,7 @@ const CLASS = {
 }
 
 const base_asset_URL = 'https://raw.githubusercontent.com/PranavJoshi-STEM/PranavJoshi-stem.github.io/main/';
+const github_API_URL = 'https://api.github.com/repos/pranavjoshi-stem/pranavjoshi-stem.github.io/contents/src/';
 
 
-export { CLASS, base_asset_URL };
+export { CLASS, base_asset_URL, github_API_URL };
