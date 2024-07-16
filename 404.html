@@ -1,33 +1,25 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="en" id="htmlbody">
 <head>
-    <title>Pranav Joshi's Website</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta http-equiv="refresh" content="0; URL='http://pranavjoshi-stem.github.io'" />
-
-    <link rel="stylesheet" type="text/css" href="files/navbar/style.css" title="wsite-theme-css"/>
-    <link id="wsite-base-style" rel="stylesheet" type="text/css" href="https://cdn2.editmysite.com/css/sites.css?buildTime=1234" />
-    <link rel="stylesheet" type="text/css" href="https://cdn2.editmysite.com/css/old/fancybox.css?1234"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn2.editmysite.com/css/social-icons.css?buildtime=1234" media="screen,projection" />
-    <link rel="stylesheet" type="text/css" href="files/main_style.css?1658937983" title="wsite-theme-css"/>
-    <link href='https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
-    <link href='https://fonts.googleapis.com/css?family=Quattrocento:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
-
-    <script type="text/javascript" src="https://cdn2.editmysite.com/js/lang/en/stl.js?buildTime=1234"></script>
-    <!--script> _W.themePlugins = [];</script-->
-    <script type="text/javascript"> _W.recaptchaUrl = "https://www.google.com/recaptcha/api.js"; </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
 </head>
 <body>
-    <div id="root"></div>
-
-    <!-- Load React and your application's JavaScript bundle -->
-    <script src="../src/index.js" type="text/JSX" defer></script>
-
-    <!-- Optionally, load jQuery or other libraries if needed -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        var doc = document.getElementById('htmlbody');
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4) {
+                if (this.status == 200) {
+                    doc.innerHTML = this.responseText;
+                    doc.removeAttribute("id");
+                }
+                if (this.status == 404) doc.innerHTML = "Page not found.";
+            }
+        }
+        xhttp.open("GET", "index.html", true);
+        xhttp.send();
+    </script>
 </body>
 </html>
