@@ -48,6 +48,8 @@ const CardContainer = styled.div`
   flex-direction: row; // Default to row layout
   justify-content: space-around; // Spread out cards evenly
   flex-wrap: wrap; // Allow wrapping for multiple cards
+  width: 90%;
+  margin: 0 auto;
 
   @media (max-width: 768px) { // Adjust for mobile screens
     flex-direction: column; // Stack cards vertically on small screens
